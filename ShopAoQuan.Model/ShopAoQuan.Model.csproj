@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Footer.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\MenuGroup.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderDetail.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\Post.cs" />
+    <Compile Include="Model\PostCategory.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductCategory.cs" />
+    <Compile Include="Model\Slide.cs" />
+    <Compile Include="Model\SupportOnline.cs" />
+    <Compile Include="Model\sysdiagram.cs" />
+    <Compile Include="Model\SystemConfig.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\VisitorStatistic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
