@@ -2,10 +2,10 @@
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IDbFactoty dbFactory;
+        private readonly IDbFactory dbFactory;
         private ShopQuanAoDbContext dbContext;
 
-        public UnitOfWork(IDbFactoty dbFactory)
+        public UnitOfWork(IDbFactory dbFactory)
         {
             this.dbFactory = dbFactory;
         }

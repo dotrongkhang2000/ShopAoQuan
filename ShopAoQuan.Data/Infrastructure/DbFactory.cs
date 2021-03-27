@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopAoQuan.Data.Infrastructure
 {
-    public class DbFactory : Disposable, IDbFactoty
+    public class DbFactory : Disposable, IDbFactory
     {
         private ShopQuanAoDbContext dbContext;
 
