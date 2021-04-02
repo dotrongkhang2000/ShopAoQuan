@@ -54,16 +54,21 @@
     <Compile Include="Infrastructure\DbFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
-    <Compile Include="Infrastructure\IRespository.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\202103270536286_InitialDB.cs" />
-    <Compile Include="Migrations\202103270536286_InitialDB.designer.cs">
-      <DependentUpon>202103270536286_InitialDB.cs</DependentUpon>
+    <Compile Include="Migrations\202103280644107_database2.cs" />
+    <Compile Include="Migrations\202103280644107_database2.designer.cs">
+      <DependentUpon>202103280644107_database2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103280740547_AddTableError.cs" />
+    <Compile Include="Migrations\202103280740547_AddTableError.designer.cs">
+      <DependentUpon>202103280740547_AddTableError.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuGroupRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
@@ -81,10 +86,10 @@
     <Compile Include="Repositories\SystemConfigRepository.cs" />
     <Compile Include="Repositories\TagRepository.cs" />
     <Compile Include="Repositories\VisitorStatisticRepository.cs" />
-    <Compile Include="ShopQuanAoDbContext.cs" />
+    <Compile Include="ShopAoQuanDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,8 +103,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103270536286_InitialDB.resx">
-      <DependentUpon>202103270536286_InitialDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103280644107_database2.resx">
+      <DependentUpon>202103280644107_database2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103280740547_AddTableError.resx">
+      <DependentUpon>202103280740547_AddTableError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

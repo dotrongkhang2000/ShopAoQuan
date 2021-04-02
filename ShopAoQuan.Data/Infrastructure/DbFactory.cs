@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopAoQuan.Data.Infrastructure
+﻿namespace ShopAoQuan.Data.Infrastructure
 {
     public class DbFactory : Disposable, IDbFactory
     {
-        private ShopQuanAoDbContext dbContext;
+        private ShopAoQuanDbContext dbContext;
 
-        public ShopQuanAoDbContext Init()
+        public ShopAoQuanDbContext Init()
         {
-            return dbContext ?? (dbContext = new ShopQuanAoDbContext());
+            return dbContext ?? (dbContext = new ShopAoQuanDbContext());
         }
 
         protected override void DisposeCore()

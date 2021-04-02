@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ShopAoQuan.Data.Infrastructure
 {
-    // Là class giúp giải phóng các tài nguyên khi đối tượng bị hủy
     public class Disposable : IDisposable
     {
         private bool isDisposed;

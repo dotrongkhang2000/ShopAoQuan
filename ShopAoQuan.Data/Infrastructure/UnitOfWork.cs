@@ -1,16 +1,22 @@
-﻿namespace ShopAoQuan.Data.Infrastructure
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ShopAoQuan.Data.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IDbFactory dbFactory;
-        private ShopQuanAoDbContext dbContext;
+        private ShopAoQuanDbContext dbContext;
 
         public UnitOfWork(IDbFactory dbFactory)
         {
             this.dbFactory = dbFactory;
         }
 
-        public ShopQuanAoDbContext DbContext
+        public ShopAoQuanDbContext DbContext
         {
             get { return dbContext ?? (dbContext = dbFactory.Init()); }
         }
