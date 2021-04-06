@@ -206,6 +206,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -220,6 +221,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -234,21 +236,28 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\" />
+    <Folder Include="app\shared\" />
     <Folder Include="App_Data\" />
     <Folder Include="Assets\admin\libs\" />
+    <Folder Include="Asset\admin\css\" />
+    <Folder Include="Asset\admin\images\" />
+    <Folder Include="Asset\admin\js\" />
     <Folder Include="Asset\admin\libs\" />
     <Folder Include="Asset\client\" />
     <Folder Include="Scripts\plugins\" />
     <Folder Include="Scripts\spa\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include=".bowerrc" />
     <None Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopAoQuan.Common\ShopAoQuan.Common.csproj">
