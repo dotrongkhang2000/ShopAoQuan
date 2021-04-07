@@ -18,6 +18,17 @@
                 </div>
               </div>
               <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="input-group">
+                              <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                              <span class="input-group-btn">
+                                  <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                              </span>
+                          </div><!-- /input-group -->
+                      </div>
+
+                  </div>
                 <div class="row">
                     <div class="col-md-12">
                        
@@ -47,6 +58,11 @@
                                             </td>
                                         </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">Tổng số bản ghi : {{totalCount}}</td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                             <!-- /.card-body -->
