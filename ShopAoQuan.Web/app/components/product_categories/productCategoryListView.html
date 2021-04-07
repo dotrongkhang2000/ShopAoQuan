@@ -26,10 +26,11 @@
                                 <table class="table table-sm">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Tên danh mục</th>
-                                            <th>Ngày tạo</th>
-                                            <th style="width: 40px">Trạng thái</th>
+                                            <th style="width: 10%">ID</th>
+                                            <th style="width: 30%">Tên danh mục</th>
+                                            <th style="width: 30%">Ngày tạo</th>
+                                            <th style="width: 15%">Trạng thái</th>
+                                            <th style="width: 15%">Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -37,9 +38,13 @@
                                             <td>{{item.ID}}</td>
                                             <td>{{item.Name}}</td>
                                             <td>
-                                                {{item.CreatedDate}}
+                                                {{item.CreatedDate | date : 'dd/mm/yyyy hh:mm:ss'}}
                                             </td>
-                                            <td><span class="badge bg-danger">{{item.Status}}</span></td>
+                                            <td><span ng-class="{'badge bg-danger': item.Status == false, 'badge bg-green' : item.Status == true}">{{item.Status  | statusFilter }}</span></td>
+                                            <td>
+                                                <button class="btn btn-primary"><i class="fa fa-pen"></i></button>
+                                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
