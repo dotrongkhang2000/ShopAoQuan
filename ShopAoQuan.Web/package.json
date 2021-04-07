@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "angular": "1.5.8",
+    "angular-ui-router": "0.2.18",
+    "angular-route": "1.5.8",
+    "bootstrap": "3.3.6",
+    "jquery": "2.2.4",
+    "fastclick": "1.0.6",
+    "slimscroll": "0.9.1"
+  }
+}
