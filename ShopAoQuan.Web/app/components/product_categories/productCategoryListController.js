@@ -4,9 +4,9 @@
 (function (app) {
     app.controller('productCategoryListController', productCategoryListController);
 
-    productCategoryListController.$inject = ['$scope', 'apiService'];
+    productCategoryListController.$inject = ['$scope', 'apiService', 'notificationService'];
 
-    function productCategoryListController($scope, apiService) {
+    function productCategoryListController($scope, apiService, notificationService) {
         $scope.productCategories = [];
         $scope.page = 0;
         $scope.pageCount = 0;
@@ -28,6 +28,13 @@
                 }
             }
             apiService.get('/api/productcategory/getall', config, function (result) {
+                //thong bao notificationService 
+                if (result.data.TotalCount == 0) {
+                    notificationService.displayWarning('Không có bản ghi nào thõa mãn điều kiện!');
+                }
+                else {
+                    notificationService.displaySuccess("Đã tìm thấy " + result.data.TotalCount + " bản ghi.");
+                }
                 // Ham success => tra ve du lieu resource
                 $scope.productCategories = result.data.Items;
                 $scope.page = result.data.Page;
