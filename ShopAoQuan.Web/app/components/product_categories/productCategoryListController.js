@@ -8,13 +8,25 @@
 
     function productCategoryListController($scope, apiService) {
         $scope.productCategories = [];
+        $scope.page = 0;
+        $scope.pageCount = 0;
+        $scope.getProductCategories = getProductCategories;
 
-            $scope.getProductCategories = getProductCategories;
-
-        function getProductCategories(){
-            apiService.get('/api/productcategory/getall', null, function (result) {
+        function getProductCategories(page) {
+            page = page || 0;
+            var config = {
+                params: {
+                    page: page,
+                    pageSize : 2
+                }
+            }
+            apiService.get('/api/productcategory/getall', config, function (result) {
                 // Ham success => tra ve du lieu resource
-                $scope.productCategories = result.data;
+                $scope.productCategories = result.data.Items;
+                $scope.page = result.data.Page;
+                $scope.pagesCount = result.data.TotalPages;
+                $scope.totalCount = result.data.TotalCount;
+
             }), function () {
                 // Ham failed
                 console.log('Load Producte Category Failed')
@@ -27,4 +39,4 @@
     }
 
 }
-) (angular.module('shopaoquan.product_categories'));
+)(angular.module('shopaoquan.product_categories'));
