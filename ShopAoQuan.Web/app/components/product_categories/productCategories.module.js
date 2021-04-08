@@ -12,14 +12,20 @@
             url: "/product_categories_edit/:id",
             templateUrl: "/app/components/product_categories/productCategoryEditView.html",
             controller: "productCategoryEditController"
-        })
-        $routeProvider.when('/product_categories', {
-            templateUrl: "/app/components/product_categories/productCategoryListView.html",
-            controller: "productCategoryListController"
-        }).when("/product_categories_add", {
+        }).state('product_categories_add', {
+            url: "/product_categories_add",
             templateUrl: "/app/components/product_categories/productCategoryAddView.html",
             controller: "productCategoryAddController"
         })
+        //$routeProvider
+            //.when('/product_categories', {
+            //templateUrl: "/app/components/product_categories/productCategoryListView.html",
+            //controller: "productCategoryListController"
+            //})
+        //    .when("/product_categories_add", {
+        //    templateUrl: "/app/components/product_categories/productCategoryAddView.html",
+        //    controller: "productCategoryAddController"
+        //})
         //}).when("/product_categories_edit/:id", {
         //    templateUrl: "/app/components/product_categories/productCategoryEditView.html",
         //    controller: "productCategoryEditController"
