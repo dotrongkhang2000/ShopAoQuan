@@ -8,6 +8,10 @@
             url: "/product_categories",
             templateUrl: "/app/components/product_categories/productCategoryListView.html",
             controller: "productCategoryListController"
+        }).state('product_categories_edit', {
+            url: "/product_categories_edit/:id",
+            templateUrl: "/app/components/product_categories/productCategoryEditView.html",
+            controller: "productCategoryEditController"
         })
         $routeProvider.when('/product_categories', {
             templateUrl: "/app/components/product_categories/productCategoryListView.html",
@@ -16,6 +20,10 @@
             templateUrl: "/app/components/product_categories/productCategoryAddView.html",
             controller: "productCategoryAddController"
         })
+        //}).when("/product_categories_edit/:id", {
+        //    templateUrl: "/app/components/product_categories/productCategoryEditView.html",
+        //    controller: "productCategoryEditController"
+        //})
     });
 })();
 
