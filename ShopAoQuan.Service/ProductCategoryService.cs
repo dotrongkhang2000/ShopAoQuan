@@ -13,6 +13,8 @@ namespace ShopAoQuan.Service
 
         ProductCategory Delete(int id);
 
+        IEnumerable<ProductCategory> GetAll();
+
         IEnumerable<ProductCategory> GetAll(string keyword);
 
         IEnumerable<ProductCategory> GetAllByParentId(int parentId);

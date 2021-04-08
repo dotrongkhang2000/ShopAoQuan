@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ShopAoQuan.Web.Infrastructure.Extensions;
 
 namespace ShopAoQuan.Web.API
 {
@@ -22,7 +23,9 @@ namespace ShopAoQuan.Web.API
             this._productCategoryService = productCategoryService;
         }
 
+        //Tên phương thức không đúng theo response nên phải định nghĩa 
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
@@ -43,6 +46,51 @@ namespace ShopAoQuan.Web.API
                     TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
                 };
                 var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
+                return response;
+            });
+        }
+
+        [Route("getallparent")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+
+                var model = _productCategoryService.GetAll();
+
+                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
+
+        [Route("create")]
+        [HttpPost]
+        [AllowAnonymous]
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductCategoryViewModel productCategoryVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newProductCategory = new ProductCategory();
+                    newProductCategory.UpdateProductCategory(productCategoryVm);
+                    newProductCategory.CreatedDate = DateTime.Now;
+                    _productCategoryService.Add(newProductCategory);
+                    _productCategoryService.Save();
+
+                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newProductCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+
                 return response;
             });
         }

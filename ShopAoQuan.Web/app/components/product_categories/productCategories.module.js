@@ -3,7 +3,12 @@
 (function () {
     var app = angular.module('shopaoquan.product_categories', ['shopaoquan.common']);
 
-    app.config(function ($routeProvider) {
+    app.config(function ($routeProvider, $stateProvider) {
+        $stateProvider.state('product_categories', {
+            url: "/product_categories",
+            templateUrl: "/app/components/product_categories/productCategoryListView.html",
+            controller: "productCategoryListController"
+        })
         $routeProvider.when('/product_categories', {
             templateUrl: "/app/components/product_categories/productCategoryListView.html",
             controller: "productCategoryListController"

@@ -1,4 +1,4 @@
 ﻿
 (function () {
-    angular.module('shopaoquan.common', ['ngRoute'])
+    angular.module('shopaoquan.common', ['ui.router','ngRoute'])
 })();

@@ -14,6 +14,11 @@
         $scope.keyword = '';
 
         $scope.search = search;
+        $scope.AddProductCategory = AddProductCategory;
+
+        function AddProductCategory() {
+
+        }
 
         function search() {
             getProductCategories();
