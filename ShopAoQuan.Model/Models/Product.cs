@@ -44,5 +44,6 @@ namespace ShopAoQuan.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
+        public string Tags { get; set; }
     }
 }

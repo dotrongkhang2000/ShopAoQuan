@@ -15,6 +15,7 @@
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
+    @*<div ui-view></div>*@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -194,31 +195,28 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Trang Chủ
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    @*<a ui-sref="products" class="nav-link">*@
-                                    <a href="#products" class="nav-link">
+                                    <a ui-sref="products" class="nav-link">
+
+                                        @*<a href="#products" class="nav-link">*@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Product</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    @*<a ui-sref="product_add" class="nav-link">*@
-                                    <a href="#product_add" class="nav-link">
+                                    <a ui-sref="product_add" class="nav-link">
+
+                                        @*<a href="#product_add" class="nav-link">*@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Product Add</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -241,13 +239,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#product_categories" class="nav-link">
+                                    <a ui-sref="product_categories" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Danh mục sản phẩm</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a ui-sref="products" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sản phẩm</p>
                                     </a>
@@ -833,7 +831,6 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @*<div ui-view></div>*@
             <div ng-view></div>
             <div ui-view></div>
         </div>
@@ -868,6 +865,11 @@
     <script src="~/node_modules/angular-route/angular-route.js"></script>
     <script src="~/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/node_modules/toastr/package/toastr.js"></script>
+    <script src="~/node_modules/bootbox/bootbox.js"></script>
+    <script src="~/node_modules/ckeditor/ckeditor.js"></script>
+    <script src="~/node_modules/ngbootbox/dist/ngBootbox.js"></script>
+    <script src="~/node_modules/ng-ckeditor/ng-ckeditor.js"></script>
+
     <script src="~/app/shared/modules/shopaoquan.common.js"></script>
     <script src="~/app/shared/services/notificationService.js"></script>
     <script src="~/app/shared/services/commonService.js"></script>
@@ -879,6 +881,8 @@
 
 
     <script src="~/app/app.js"></script>
+
+    <script src="~/app/components/login/loginController.js"></script>
 
     <script src="~/app/components/product_categories/productCategoryListController.js"></script>
     <script src="~/app/components/product_categories/ProductCategoryAddController.js"></script>

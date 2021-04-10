@@ -10,6 +10,10 @@
     "jquery": "2.2.4",
     "fastclick": "1.0.6",
     "slimscroll": "0.9.1",
-    "toastr": "2.1.2"
+    "toastr": "2.1.2",
+    "bootbox": "5.5.2",
+    "ngbootbox": "0.2.0",
+    "ckeditor4": "4.16.0",
+    "ng-ckeditor": "2.0.5"
   }
 }

@@ -1,9 +1,85 @@
-﻿<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <h1>Product List</h1>
-</body>
-</html>
+﻿<section class="content">
+    <h1>Home Page</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh mục sản phẩm</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div>
+                            <div class="col-md-6">
+                                <a ui-sref="products_add" class="btn btn-success">Thêm mới</a>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10%">ID</th>
+                                                <th style="width: 30%">Tên danh mục</th>
+                                                <th style="width: 30%">Ngày tạo</th>
+                                                <th style="width: 15%">Trạng thái</th>
+                                                <th style="width: 15%">Thao tác</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in Products">
+                                                <td>{{item.ID}}</td>
+                                                <td>{{item.Name}}</td>
+                                                <td>
+                                                    {{item.CreatedDate | date : 'dd/mm/yyyy hh:mm:ss'}}
+                                                </td>
+                                                <td><span ng-class="{'badge bg-danger': item.Status == false, 'badge bg-green' : item.Status == true}">{{item.Status  | statusFilter }}</span></td>
+                                                <td>
+                                                    <a ui-sref="product_edit({id:item.ID})" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
+                                                    <button class="btn  btn-sm btn-danger" ng-click="deleteProduct(item.ID)"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5"><span class="pull-right">Trang : {{page + 1}} - Tổng số bản ghi : {{totalCount}}</span></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategories(page)"></pager-directive>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
