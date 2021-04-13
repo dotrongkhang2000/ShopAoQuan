@@ -11,7 +11,8 @@
 
         $scope.product = {
             CreatedDate: new Date(),
-            Status: true
+            Status: true,
+
         }
         $scope.ckeditorOptions = {
             language : 'vi',
@@ -44,7 +45,14 @@
                 console.log("Lấy dữ liêu parent thất bại!");
             });
         }
-        
+
+        $scope.ChooseImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.product.Image = fileUrl;
+            }
+            finder.popup();
+        }
         loadProductCategory();
     };
 
