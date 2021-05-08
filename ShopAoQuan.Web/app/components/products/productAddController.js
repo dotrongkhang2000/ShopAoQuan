@@ -5,30 +5,31 @@
     app.controller('productAddController', productAddController);
 
     //Gọi Service để lấy dữ liệu
-    productAddController.$inject = ['apiService', '$scope', 'notificationService', '$state'];
+    productAddController.$inject = ['apiService', '$scope', 'notificationService', '$state', 'commonService' ];
 
-    function productAddController(apiService, $scope, notificationService, $state) {
+    function productAddController(apiService, $scope, notificationService, $state, commonService) {
 
         $scope.product = {
             CreatedDate: new Date(),
             Status: true,
-
         }
+
         $scope.ckeditorOptions = {
             language : 'vi',
             height: '200px'     
         }
+        $scope.GetSeoTitle = GetSeoTitle;
+
         $scope.AddProduct = AddProduct;
         //binding dữ liệu parentCategory
 
-        $scope.GetSeoTitle = GetSeoTitle;
 
         function GetSeoTitle() {
             $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
 
         function AddProduct() {
-            apiService.post('/api/productcategory/create', $scope.product,
+            apiService.post('/api/product/create', $scope.product,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
                     $state.go('products');
@@ -37,7 +38,7 @@
                 });
         }
 
-        function loadProductCategory() {
+        function loadProduct() {
             //Tạo API
             apiService.get("/api/productcategory/getallparent", null, function (result) {
                 $scope.productCategories  = result.data;
@@ -53,8 +54,9 @@
             }
             finder.popup();
         }
-        loadProductCategory();
+
+        loadProduct();
     };
 
 
-})(angular.module('shopaoquan.product_categories'));
+})(angular.module('shopaoquan.products'));

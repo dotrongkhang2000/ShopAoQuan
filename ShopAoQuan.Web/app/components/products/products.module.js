@@ -3,8 +3,7 @@
 (function () {
     var app = angular.module('shopaoquan.products', ['shopaoquan.common']);
 
-
-    app.config(function ($routeProvider, $stateProvider) {
+    app.config(function ($stateProvider) {
         $stateProvider.state('products', {
             url: "/products",
             templateUrl: "/app/components/products/productListView.html",
@@ -17,8 +16,6 @@
             url: "/products_edit/:id",
             templateUrl: "/app/components/products/productEditView.html",
             controller: "productEditController"
-        });
+        })
     });
-
-
 })();

@@ -48,7 +48,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="item in Products">
+                                            <tr ng-repeat="item in Product">
                                                 <td>{{item.ID}}</td>
                                                 <td>{{item.Name}}</td>
                                                 <td>
@@ -56,7 +56,7 @@
                                                 </td>
                                                 <td><span ng-class="{'badge bg-danger': item.Status == false, 'badge bg-green' : item.Status == true}">{{item.Status  | statusFilter }}</span></td>
                                                 <td>
-                                                    <a ui-sref="product_edit({id:item.ID})" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
+                                                    <a ui-sref="products_edit({id:item.ID})" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
                                                     <button class="btn  btn-sm btn-danger" ng-click="deleteProduct(item.ID)"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>

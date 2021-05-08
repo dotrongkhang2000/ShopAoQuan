@@ -32,11 +32,14 @@ namespace ShopAoQuan.Web.API
             {
                 int totalRow = 0;
                 var model = _productCategoryService.GetAll(keyword);
+                
 
                 totalRow = model.Count();
                 var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
 
                 var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(query);
+                //category = (Categoies)AutoMapper.Mapper.Map(viewModel, category, typeof(CategoriesViewModel), typeof(Categoies));
+                //var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(query);
 
                 var paginationSet = new PaginationSet<ProductCategoryViewModel>()
                 {

@@ -3,7 +3,7 @@
 (function () {
     var app = angular.module('shopaoquan.product_categories', ['shopaoquan.common']);
 
-    app.config(function ($routeProvider, $stateProvider) {
+    app.config(function ( $stateProvider) {
         $stateProvider
             .state('product_categories', {
                 url: "/product_categories",
@@ -21,19 +21,6 @@
                 templateUrl: "/app/components/product_categories/productCategoryAddView.html",
                 controller: "productCategoryAddController"
             })
-        //$routeProvider
-        //.when('/product_categories', {
-        //templateUrl: "/app/components/product_categories/productCategoryListView.html",
-        //controller: "productCategoryListController"
-        //})
-        //    .when("/product_categories_add", {
-        //    templateUrl: "/app/components/product_categories/productCategoryAddView.html",
-        //    controller: "productCategoryAddController"
-        //})
-        //}).when("/product_categories_edit/:id", {
-        //    templateUrl: "/app/components/product_categories/productCategoryEditView.html",
-        //    controller: "productCategoryEditController"
-        //})
     });
 })();
 

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ShopAoQuan.Web.Models
 {
@@ -40,6 +37,8 @@ namespace ShopAoQuan.Web.Models
         public string CreatedBy { set; get; }
 
         public DateTime? UpdatedDate { set; get; }
+
+        public int Quantity { set; get; }
 
         public string UpdatedBy { set; get; }
 

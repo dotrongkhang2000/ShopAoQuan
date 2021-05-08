@@ -62,6 +62,7 @@ namespace ShopAoQuan.Web.Infrastructure.Extensions
             product.PromotionPrice = productViewModel.PromotionPrice;
             product.Warranty = productViewModel.Warranty;
             product.HomeFlag = productViewModel.HomeFlag;
+            product.HotFlag = productViewModel.HotFlag;
             product.ViewCount = productViewModel.ViewCount;
 
             product.CreatedDate = productViewModel.CreatedDate;
@@ -72,6 +73,7 @@ namespace ShopAoQuan.Web.Infrastructure.Extensions
             product.MetaDescription = productViewModel.MetaDescription;
             product.Status = productViewModel.Status;
             product.Tags = productViewModel.Tags;
+            product.Quantity = productViewModel.Quantity;
         }
 
         public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryViewModel)
@@ -84,6 +86,7 @@ namespace ShopAoQuan.Web.Infrastructure.Extensions
             productCategory.DisplayOrder = productCategoryViewModel.DisplayOrder;
             productCategory.Image = productCategoryViewModel.Image;
             productCategory.HomeFlag = productCategoryViewModel.HomeFlag;
+
             productCategory.CreatedDate = productCategoryViewModel.CreatedDate;
             productCategory.CreatedBy = productCategoryViewModel.CreatedBy;
             productCategory.UpdatedDate = productCategoryViewModel.UpdatedDate;

@@ -3,12 +3,13 @@
 
 (function () {
     var app = angular.module('shopaoquan', ['shopaoquan.common', 'shopaoquan.products', 'shopaoquan.product_categories']);
-    app.config(function ($routeProvider, $stateProvider) {
-        $stateProvider.state('home', {
+    app.config(function ($stateProvider) {
+        $stateProvider
+            .state('home', {
             url: "/admin",
-            templateUrl: "/app/components/home/homeView.html",
+            templateUrl: "../app/components/home/homeView.html",
             controller: 'homeController'
-        })
+            })
         //$stateProvider.state('base', {
         //    url: '',
         //    templateUrl: '/app/shared/views/baseView.html',
